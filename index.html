@@ -1,0 +1,301 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css"
+  rel="stylesheet"
+/>
+
+<link href="./custom.css" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<link href="./fonts/poppins.css" rel="stylesheet" />
+
+<section id="header_landing">
+  <div class="container">
+    <div class="div_header active" id="div_header_1"></div>
+  </div>
+</section>
+
+<section
+  id="section-testimonials"
+  class="l-home-section l-home-section--testimonials"
+>
+
+  <div class="container-x mx-auto py-5 bg-transparent">
+    <div class="signup-content d-flex justify-content-around align-items-center">
+      <div class="signup-desc flex align-center justify-content-center bg-transparent">
+        <div class="tab-contents">
+          <div class="tab-content active" data-tab="1">
+            <h2 class="mb-0 p-0 w-75 poppins-semibold">
+              <h3>
+                <b class="resaltado-text"> Déjanos tus datos,</b> y nos pondremos <b class="resaltado-text">en contacto </b>contigo <b class="resaltado-text">en breve</b>.
+              </h3>
+            </h2>
+            <div class="contact-steps mt-0">
+              <div class="contact-line"></div>
+              <div class="contact-step">
+                <div id="step1" class="step-num">
+                  <p class="resaltado-text fs-3 lh-1 mb-0">1</p>
+                </div>
+                <div class="step-title">
+                  Indícanos dónde, cuándo y con quién deseas tu cita.
+                </div>
+              </div>
+              
+              <div class="contact-step">
+                <div id="step2" class="step-num">
+                  <p>2</p>
+                </div>
+                <div class="step-title">
+                  Completa tus datos personales
+                </div>
+              </div>
+              
+              <div class="contact-step">
+                <div id="step3" class="step-num">
+                  <p>3</p>
+                </div>
+                <div class="step-title">
+                  Visualiza la información de tu solicitud y confirma
+                </div>
+              </div>
+    
+            </div>
+          </div>        
+        </div>
+      </div>
+      <div class="signup-form-conent">
+        <form
+          method="POST"
+          id="signup-form"
+          class="signup-form"
+          enctype="multipart/form-data"
+        >
+          <h3></h3>
+          <fieldset>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h1 class="text-muted poppins-semibold h2">Agenda tu Cita</h1>
+              <span class="poppins-light float-end">1/3</span>
+            </div>
+
+            <div class="row">
+              <div class="mb-3 col-12">
+                <label for="GDSUCRSLS" class="fw-normal">Sucursal <span class="text-danger">*</span></label>
+                <select name="GDSUCRSLS" 
+                class=""
+                id="GDSUCRSLS" required>
+                  <option value="">-- Seleccione</option>
+                </select>
+              </div>
+   
+              <div class="mb-3 col-12">
+                <label for="GDESPCLDD" class="fw-normal"><span>Especialidad</span> <span class="text-danger">*</span></label>
+                <select name="GDESPCLDD" 
+                class=""
+                id="GDESPCLDD" required>
+                  <option value="">-- Seleccione</option>
+                </select>
+              </div>
+
+              <div class="mb-3 col-12">
+                <label for="ABOGADO" class="fw-normal">Abogado <span class="text-danger">*</span></label>
+                <select name="ABOGADO"
+                 class=""
+                id="ABOGADO" required>
+                  <option value="">-- Seleccione</option>
+                </select>
+              </div>
+
+              <div class="mb-3 col-12">
+                <label for="FCHASERVICIO" class="fw-normal">Fecha <span class="text-danger">*</span></label>
+                <input type="date" name="FCHASERVICIO" id="FCHASERVICIO" class="form-control" required />
+              </div>
+
+              <div class="form-group mt-2 col-12">
+                <div class="row" id="container-horarios">
+                </div>
+              </div>
+          </fieldset>
+
+           <h3></h3>
+          <fieldset>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h1 class="text-muted poppins-semibold h2">Datos Personales</h1>
+              <span class="poppins-light float-end">2/3</span>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-12 col-md-6">
+                <label for="NMBRES" class="fw-normal"
+                  ><span>Nombres</span>
+                  <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  name="NMBRES"
+                  id="NMBRES"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                <label for="APLLDS" class="fw-normal"
+                  ><span>Apellidos</span>
+                  <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  name="APLLDS"
+                  id="APLLDS"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                <label for="CORREO" class="fw-normal"
+                  ><span>Correo Electrónico</span>
+                  <span class="text-danger">*</span></label
+                >
+                <input
+                  type="email"
+                  name="CORREO"
+                  id="CORREO"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-12 col-md-6">
+                <label for="CELULAR" class="fw-normal"
+                  ><span>Celular </span>
+                  <span class="text-danger">*</span></label
+                >
+                <input
+                  type="number"
+                  name="CELULAR"
+                  id="CELULAR"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="COMENTARIOS" class="fw-normal"
+                  ><span>Cuéntame tu caso </span>
+                  <span class="text-danger">*</span></label
+                >
+
+                <textarea
+                  name="COMENTARIOS"
+                  id="COMENTARIOS"
+                  class="form-control"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="mb-2">
+                <div class="mb-3">
+                    <label for="COMENTARIOS" class="fw-normal"
+                    ><span>Seleccionar archivos </span>
+                    <span class="text-danger">*</span></label
+                  >
+
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="fileInput"
+                    multiple
+                  />
+                </div>
+                <ul class="file-list" id="fileList"></ul>
+              </div>
+            </div>
+          </fieldset>
+
+          <h3></h3>
+          <fieldset>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h1 class="text-muted poppins-semibold h2">Tú solicitud</h1>
+              <span class="poppins-light float-end">3/3</span>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <figure>
+                  <blockquote class="blockquote">
+                    <p id="name_abogado"></p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    Especialidad en <span id="especialidad_abogado"></span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <hr class="border border-3 border-dark rounded mt-0" />
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="row">
+                  <span class="col">Fecha:</span> 
+                  <span class="col text-end" id="fecha_cliente"></span>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <span class="col">Hora</span>
+                  <span class="col text-end" id="hora_cliente"></span>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <span class="col-3">Dirección</span>
+                  <span class="col text-end" id="direccion_cliente"></span>
+                </div>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+  integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"
+  integrity="sha512-bE0ncA3DKWmKaF3w5hQjCq7ErHFiPdH2IGjXRyXXZSOokbimtUuufhgeDPeQPs51AI4XsqDZUK7qvrPZ5xboZg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script src="./app.js"></script>

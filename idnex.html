@@ -1,0 +1,274 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+/>
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+/>
+<link href="https://ccfirma.com/pages/solicitud-reserva/style.css" rel="stylesheet" />
+
+<style>
+  #header_landing{
+    position: relative;
+    
+  }
+
+  #section-testimonials{
+    position: absolute;
+    width: 100%;
+    border-radius: 100px 100px 0 0;
+    background-color: #f8f9fa;
+  }
+
+  #section-testimonials .container-x {
+    border-radius: 80px;
+  }
+</style>
+
+
+<section id="header_landing">
+  <div class="container">
+    <div class="div_header active" id="div_header_1">
+      <h3 class="oswald-600">
+        Brindamos el mejor asesoramiento legal para empresas
+      </h3>
+      <p class="oswald-200">
+        We are a team of experienced business attorneys who are passionate about
+        helping businesses grow and succeed. We provide a wide range of legal
+        services to help you navigate the complex legal landscape and protect
+        your business interests. Whether you need help with contracts,
+        intellectual property, employment law, or any other legal issue, we are
+        here to help.
+      </p>
+      <div class="navigation-buttons">
+        <p>Contáctenos</p>
+        <a class="btn-nav btn_next" id="enlace_next" href="#signup-form">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M11.354 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L9.293 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M12 8a.5.5 0 0 1-.5.5H3a.5.5 0 0 1 0-1h8.5a.5.5 0 0 1 .5.5z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  id="section-testimonials"
+  class="l-home-section l-home-section--testimonials"
+>
+  <div class="container-x mx-auto py-5">
+    <div class="signup-content d-flex justify-content-center">
+      <div class="signup-desc">
+        <div class="signup-desc-content">
+          <h2>
+            <span> Completa tus datos,</span> te contactaremos a la brevedad
+          </h2>
+          <img
+            src="https://3adigitall.com.br/wp-content/uploads/elementor/thumbs/Suporte-3A-Digitall-1-p8f8o08fpuksc5wkck4hsuz2aqqylrbh84dlq28kgw.png"
+            alt=""
+            class="signup-img"
+          />
+        </div>
+      </div>
+      <div class="signup-form-conent">
+        <form
+          method="POST"
+          id="signup-form"
+          class="signup-form"
+          enctype="multipart/form-data"
+        >
+          <h3></h3>
+          <fieldset>
+            <span class="step-current">1 / 4</span>
+            <h1 class="oswald-600 text-muted">Sucursales</h1>
+            <div class="row g-4 mt-2" id="data-sucursales">
+ 
+            </div>
+          </fieldset>
+
+          <h3></h3>
+          <fieldset>
+            <span class="step-current">2 / 4</span>
+            <h1 class="oswald-600 text-muted">Servicios</h1>
+
+            <div class="row">
+              <div class="mb-2 col-12">
+                <label for="GDESPCLDD" class="label-form">Especialidad</label>
+                <select name="GDESPCLDD" 
+                class="form-select"
+                id="GDESPCLDD" required>
+                  <option value="">-- Seleccione</option>
+                </select>
+              </div>
+
+              <div class="mb-2 col-12">
+                <label for="ABOGADO" class="label-form">Abogado</label>
+                <select name="ABOGADO"
+                 class="form-select"
+                id="ABOGADO" required>
+                  <option value="">-- Seleccione</option>
+                </select>
+              </div>
+
+              <div class="mb-2 col-12">
+                <label for="FCHASERVICIO" class="label-form">Fecha</label>
+                <input type="date" name="FCHASERVICIO" id="FCHASERVICIO" class="form-control" required />
+              </div>
+
+              <div class="form-group mt-2 col-12">
+                <div class="row" id="container-horarios">
+                </div>
+              </div>
+          </fieldset>
+
+          <h3></h3>
+          <fieldset>
+            <span class="step-current">3 / 4</span>
+            <h1 class="oswald-600 text-muted">Datos Personales</h1>
+            <div class="row">
+              <div class="form-group mb-2 col-12 col-md-6">
+                <input style="font-size: 16px!important; font-weight: normal" type="text" name="NMBRES" id="NMBRES" required />
+                <label for="NMBRES">Nombres</label>
+              </div>
+
+              <div class="form-group mb-2 col-12 col-md-6">
+                <input style="font-size: 16px!important; font-weight: normal" type="text" name="APLLDS" id="APLLDS" required />
+                <label for="APLLDS">Apellidos</label>
+              </div>
+
+              <div class="form-group mb-2 col-12 col-md-6">
+                <input style="font-size: 16px!important; font-weight: normal" type="text" name="CORREO" id="CORREO" required />
+                <label for="CORREO">Correo Electrónico</label>
+              </div>
+
+              <div class="form-group mb-2 col-12 col-md-6">
+                <input style="font-size: 16px!important; font-weight: normal" type="text" name="CELULAR" id="CELULAR" required />
+                <label for="CELULAR">Celular</label>
+              </div>
+
+              <div class="mb-2 mt-4">
+                <label
+                  for="COMENTARIOS"
+                  style="font-size: 16px!important; font-weight: normal"
+                  class="mb-2 label-form"
+                  >Comentarios</label
+                >
+                <textarea
+                  name="COMENTARIOS"
+                  id="COMENTARIOS"
+                  class="form-control"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group mb-2 col-12">
+                <div class="mb-3">
+                  <label
+                    for="fileInput"
+                    style="font-size: 16px!important; font-weight: normal"
+                    class="form-label label-form"
+                    >Selecciona archivos</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="fileInput"
+                    multiple
+                  />
+                </div>
+                <ul class="file-list" id="fileList"></ul>
+              </div>
+            </div>
+          </fieldset>
+
+          <h3></h3>
+          <fieldset>
+            <span class="step-current">4 / 4</span>
+            <h1 class="oswald-600 text-muted mb-5">Confirmación</h1>
+
+              <div class="row">
+                <div class="col-md-4 text-center">
+                    <img id="foto-abogado" src="foto.jpg" class="img-fluid rounded" alt="Foto" style="max-height: 150px;">
+                </div>
+
+                <div class="col-md-8">
+                    <h5 id="name_abogado"></h5>
+                    <p><strong>Especialidad:</strong> <span id="especialidad_abogado"> </span></p>
+                </div>   
+              </div>   
+              <hr>
+      
+              <div class="row">
+                  <div class="col-md-12">
+                      <p><strong>Cliente:</strong> <span id="name_cliente"></span></p>
+                  </div>
+              </div>
+      
+              <hr>
+      
+              <div class="row">
+                  <div class="col-md-6">
+                      <p><strong>Fecha:</strong> <span id="fecha_cliente"></span></p>
+                  </div>
+                  <div class="col-md-6">
+                      <p><strong>Hora:</strong> <span id="hora_cliente"></span></p>
+                  </div>
+              </div>
+      
+              <hr>
+      
+              <div class="row">
+                  <div class="col-md-12">
+                      <p><strong>Dirección:</strong> <span id="direccion_cliente"></span></p>
+                  </div>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+  integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"
+  integrity="sha512-bE0ncA3DKWmKaF3w5hQjCq7ErHFiPdH2IGjXRyXXZSOokbimtUuufhgeDPeQPs51AI4XsqDZUK7qvrPZ5xboZg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script src="https://ccfirma.com/pages/solicitud-reserva/app.js"  crossorigin="anonymous"></script>

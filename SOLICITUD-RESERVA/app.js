@@ -12,8 +12,8 @@ $(document).ready(function () {
 
     let abogados = [];
     let Sucursales = [];
-    let ENDPOINT = "http://localhost:7001/";
-    // let ENDPOINT = "https://caroasociados.pe/";
+    // let ENDPOINT = "http://localhost:7001/";
+    let ENDPOINT = "https://caroasociados.pe/";
 
     $("#signup-form").steps({
         headerTag: "h3",

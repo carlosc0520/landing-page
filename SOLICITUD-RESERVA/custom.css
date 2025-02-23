@@ -1,18 +1,12 @@
 #section-testimonials {
     padding: 0px 0;
-    margin: -200px 0px;
     position: relative;
     transition: margin-top 0.5s ease-in-out;
     width: 100%;
-    border-radius: 100px 100px 0 0;
+    border-radius: 50px 50px 0px 0px;
     background-color: #f8f9fa;
     z-index: 10;
-}
-
-#section-testimonials h2 {
-    font-family: Oswald, sans-serif;
-    font-weight: 600;
-    color: #333;
+    margin-top: -48;
 }
 
 .testimonials-carousel {
@@ -193,19 +187,12 @@ select {
 }
 
 #header_landing {
-    height: 507px;
-    background-image: url("https://ccfirma.com/wp-content/uploads/2025/01/reserva.png");
+    background-image: url("./img/mujer-ccfirma.jpg");
     background-size: cover;
-    background-position: top;
+    background-position: center center;
     background-repeat: no-repeat;
     color: #fff;
-    top: -120px;
     position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
-
-    padding: 20px 50px;
 }
 
 /* fondo sobrepuesto nara
@@ -1484,16 +1471,14 @@ footer {
     margin-top: 200px;
 }
 
-#header_landing::before {
-    content: "";
-    position: absolute;
+#header_filter {
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(100, 33, 0, 0.34);
-    /* Color #642100 con opacidad 0.34 */
-    z-index: 1;
+    position: absolute !important;
+    background-color: #3A1300;
+    opacity: 0.47
 }
 
 /* Asegura que el contenido del header esté sobre la capa */
@@ -1511,3 +1496,124 @@ body:not([class*=elementor-page-]) .site-main {
     padding-inline-start: 0px !important;
     padding-inline-end: 0px !important;
 }
+
+.container-title-heeader{
+    padding: 200px 0px 150px 0px;
+}
+
+.contact-with-us {
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 7px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.contact-container {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.contact-item {
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    color: #f47321;
+    margin-right: 10px;
+}
+
+.contact-item h3 {
+    font-size: 1.1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.contact-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #f47321;
+    font-weight: bold;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.floating-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Tooltip con ::after */
+.floating-btn::after {
+    content: "Contacta con nosotros, ¿Hablamos?";
+    position: absolute;
+    right: 80px; /* Mueve el tooltip a la izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* Flecha del tooltip */
+.floating-btn::before {
+    content: "";
+    position: absolute;
+    right: 65px; /* Ajusta para alinearse con el tooltip */
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar tooltip al hacer hover */
+.floating-btn:hover::after,
+.floating-btn:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efecto de escala al hacer hover */
+.floating-btn:hover {
+    transform: scale(1.1);
+}
+

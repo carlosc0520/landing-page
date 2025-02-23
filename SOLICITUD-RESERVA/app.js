@@ -12,8 +12,8 @@ $(document).ready(function () {
 
     let abogados = [];
     let Sucursales = [];
-    //let ENDPOINT = "http://localhost:7001/";
-    let ENDPOINT = "https://caroasociados.pe/";
+    let ENDPOINT = "http://localhost:7001/";
+    // let ENDPOINT = "https://caroasociados.pe/";
 
     $("#signup-form").steps({
         headerTag: "h3",
@@ -154,6 +154,9 @@ $(document).ready(function () {
 
         },
         onStepChanging: function (event, currentIndex, newIndex) {
+
+            if(newIndex < currentIndex) return true;
+
             if (currentIndex === 0) {
                 let sucursal = $("#GDSUCRSLS");
                 let especialidad = $("#GDESPCLDD");
@@ -162,10 +165,10 @@ $(document).ready(function () {
                 let horario = $("#container-horarios .card.bg-orange").attr("data-id");
                 let errores = 0;
 
-                errores = validateForm(sucursal, /^.+$/);
-                errores += validateForm(especialidad, /^.+$/);
-                errores += validateForm(abogado, /^.+$/);
-                errores += validateForm(fecha, /^\d{4}-\d{2}-\d{2}$/)
+                errores = validateForm(sucursal, /^.+$/, "Seleccione una sucursal");
+                errores += validateForm(especialidad, /^.+$/, "Seleccione una especialidad");
+                errores += validateForm(abogado, /^.+$/, "Seleccione un abogado");
+                errores += validateForm(fecha, /^\d{4}-\d{2}-\d{2}$/, "Ingrese una fecha válida")
 
                 if (errores > 0) return false;
 
@@ -192,11 +195,11 @@ $(document).ready(function () {
                 let comentarios = $("#COMENTARIOS");
                 let errores = 0;
 
-                errores = validateForm(nombres, /^.+$/);
-                errores += validateForm(apellidos, /^.+$/);
-                errores += validateForm(correo, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
-                errores += validateForm(celular, /^(?:[67]\d{8}|9\d{8})$/);
-                errores += validateForm(comentarios, /^.+$/)
+                errores = validateForm(nombres, /^.+$/, "Ingrese su nombre");
+                errores += validateForm(apellidos, /^.+$/, "Ingrese sus apellidos");
+                errores += validateForm(correo, /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, "Ingrese un correo válido");
+                errores += validateForm(celular, /^(?:[67]\d{8}|9\d{8})$/, "Ingrese un número de celular válido");
+                errores += validateForm(comentarios, /^.{1,500}$/, "Debe tener entre 1 y 500 caracteres");
 
                 if (errores > 0) {
                     return false;
@@ -343,6 +346,8 @@ $(document).ready(function () {
                 GDSUCRSLS_SELECT.append($("<option>").val(item.vlR1).text(item.dtlle));
             });
 
+            cargarSucursales();
+
             $(".direccion").on("click", function () {
                 $(".direccion").removeClass("card-active");
                 $(this).addClass("card-active");
@@ -374,20 +379,39 @@ $(document).ready(function () {
             console.error(error);
         });
 
-    let validateForm = (referencia, regex = /^[a-zA-Z\s]*$/, isLabel = false) => {
+    let validateForm = (referencia, regex = /^[a-zA-Z\s]*$/, errorMsg = "Campo inválido") => {
         let input = $(referencia);
         let value = input.val();
         value = value ? value.toString() : "";
+        let isValid = regex.test(value);
 
-        let bandera = regex.test(value);
+        input.removeClass("error-input");
+        input.siblings(".error-message").remove();
 
-        if (isLabel) {
-            input.siblings("label").css("color", bandera ? "#888" : "#dc35459e");
-        } else {
-            input.removeClass("error-input");
-            input.addClass(`${bandera ? "" : "error-input"}`);
+        if (!isValid) {
+            input.addClass("error-input");
+            input.after(`<span class="error-message" style="color: red; font-size: 12px;">${errorMsg}</span>`);
         }
-        return bandera ? 0 : 1;
+
+        return isValid ? 0 : 1;
+    };
+
+    const cargarSucursales = () => {
+        let filteredData = Sucursales.filter(item => item.gdpdre === "GDSCRSLS" && item.vlR2);        
+        filteredData.forEach(location => {
+            var address = encodeURIComponent(location.vlR2 || "");
+            var card = `<div class="card border-0" style="height: 350px; min-width: 200px; max-width: 350px;">
+                            <div class="card-body">
+                                <h6>${location?.dtlle}</h6>
+                                <span>${location?.vlR2}</span>
+                                <iframe loading="lazy" width="100%" height="250px" 
+                                    src="https://maps.google.com/maps?q=${address}&t=m&z=10&output=embed&iwloc=near" 
+                                    title="${location?.vlR2}" aria-label="${location?.vlR2}">
+                                    </iframe>
+                            </div>
+                          </div>`;
+            $("#container-sucursales").append(card);
+        });
     };
 
     const mjsArraySwal = (array) => {

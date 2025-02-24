@@ -531,4 +531,19 @@ $(document).ready(function () {
             }
         }
     });
+
+    (()=> {
+        const floatingBtn = document.querySelector(".floating-btn");
+        if (!floatingBtn) return;
+        floatingBtn.classList.add("tooltip-active");
+
+        setTimeout(() => {
+            floatingBtn.classList.add("tooltip-fade-out");
+        }, 1500);
+
+        setTimeout(() => {
+            floatingBtn.classList.remove("tooltip-active", "tooltip-fade-out");
+        }, 2000);
+        
+    })();
 });

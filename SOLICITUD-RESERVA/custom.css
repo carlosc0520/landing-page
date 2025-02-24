@@ -1563,6 +1563,7 @@ body:not([class*=elementor-page-]) .site-main {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    z-index: 100;
 }
 
 .floating-btn img {
@@ -1572,11 +1573,10 @@ body:not([class*=elementor-page-]) .site-main {
     border-radius: 50%;
 }
 
-/* Tooltip con ::after */
 .floating-btn::after {
     content: "Contacta con nosotros, ¿Hablamos?";
     position: absolute;
-    right: 80px; /* Mueve el tooltip a la izquierda */
+    right: 80px;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.8);
@@ -1591,30 +1591,38 @@ body:not([class*=elementor-page-]) .site-main {
     pointer-events: none;
 }
 
-/* Flecha del tooltip */
 .floating-btn::before {
     content: "";
     position: absolute;
-    right: 65px; /* Ajusta para alinearse con el tooltip */
+    right: 64px;
     top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    width: 10px;
-    height: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
 }
 
-/* Mostrar tooltip al hacer hover */
+.floating-btn.tooltip-active::after,
+.floating-btn.tooltip-active::before {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.floating-btn.tooltip-fade-out::after,
+.floating-btn.tooltip-fade-out::before {
+    opacity: 0;
+}
+
 .floating-btn:hover::after,
 .floating-btn:hover::before {
     opacity: 1;
     visibility: visible;
 }
 
-/* Efecto de escala al hacer hover */
 .floating-btn:hover {
     transform: scale(1.1);
 }
-

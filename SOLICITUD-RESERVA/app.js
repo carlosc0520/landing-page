@@ -130,8 +130,8 @@ $(document).ready(function () {
                         step2.removeClass("fs-3 lh-1 mb-0");
                         step3.removeClass("fs-3 lh-1 mb-0");
                         step1.html("<p class='resaltado-text fs-3 lh-1 mb-0'>1</p>");
-                        step2.html("<p>2</p>");
-                        step3.html("<p>3</p>");
+                        step2.html("<p class='fs-5'>2</p>");
+                        step3.html("<p class='fs-5'>3</p>");
 
                         return;
                     }
